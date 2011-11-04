@@ -32,6 +32,7 @@
       strings: {
         prefixAgo: null,
         prefixFromNow: null,
+        joinWith: " ",
         suffixAgo: "ago",
         suffixFromNow: "from now",
         seconds: "less than a minute",
@@ -84,7 +85,7 @@
         years < 2 && substitute($l.year, 1) ||
         substitute($l.years, Math.floor(years));
 
-      return $.trim([prefix, words, suffix].join(" "));
+      return $.trim([prefix, words, suffix].join($l.joinWith || " "));
     },
     parse: function(iso8601) {
       var s = $.trim(iso8601);
