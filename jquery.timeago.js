@@ -85,7 +85,7 @@
         years < 2 && substitute($l.year, 1) ||
         substitute($l.years, Math.floor(years));
 
-      return $.trim([prefix, words, suffix].join($l.joinWith || " "));
+      return $.trim([prefix, words, suffix].join($l.joinWith));
     },
     parse: function(iso8601) {
       var s = $.trim(iso8601);
